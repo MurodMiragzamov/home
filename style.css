@@ -4,3 +4,10 @@ body{
     background: rgba(3, 19, 90, 0.89);
     
 }
+p{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 40px;
+}
