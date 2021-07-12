@@ -16,29 +16,60 @@
 
 // )
 
-var elp= document.querySelector('#p')
 
-alert('Xush kelibsiz!');
-var name = prompt(`Iltimos ismingizni kiriting`),
-    ctiy = prompt(`Qayerga sayoxat qilmoqchisiz?`),
-    money = prompt(`siz bu sayoxatga qancha mablag ajratgansiz? (so'mda)`);
 
- alert(`Umumiy xarajatlar: 
 
- Borish-kelish samolyot bileti - $500
 
- Mehmonxona to’lovi (to’liq safar davomiyligi uchun) - $250
 
- Muzey va ko’ngilochar joylar uchun - 120 yevro`);
+// var elp= document.querySelector('#p')
 
-var euro = 10354.03;
-var usd = 9433.34;
+// alert('Xush kelibsiz!');
+// var name = prompt(`Iltimos ismingizni kiriting`),
+//     ctiy = prompt(`Qayerga sayoxat qilmoqchisiz?`),
+//     money = prompt(`siz bu sayoxatga qancha mablag ajratgansiz? (so'mda)`);
 
-var rasxod = (euro *120) +(usd*750) ;
+//  alert(`Umumiy xarajatlar: 
 
-if(money >= rasxod){
+//  Borish-kelish samolyot bileti - $500
 
-    elp.textContent= `Oq yo'l  ${name}`
-} else{
-    elp.textContent= ` ${name}  ozgina sabr qilish kerak bo’lar ekan.`
-}
+//  Mehmonxona to’lovi (to’liq safar davomiyligi uchun) - $250
+
+//  Muzey va ko’ngilochar joylar uchun - 120 yevro`);
+
+// var euro = 10354.03;
+// var usd = 9433.34;
+
+// var rasxod = (euro *120) +(usd*750) ;
+
+// if(money >= rasxod){
+
+//     elp.textContent= `Oq yo'l  ${name}`
+// } else{
+//     elp.textContent= ` ${name}  ozgina sabr qilish kerak bo’lar ekan.`
+// }
+
+
+var elForm = document.querySelector('#form'),
+    elInput= document.querySelector('.input'),
+    elUSD = document.querySelector('.usd'),
+    elEURO = document.querySelector('.euro'),
+    elRUB = document.querySelector('.rub');
+
+   
+
+    
+    elForm.addEventListener('submit',function(evt){
+        evt.preventDefault();
+        var userSum = Number(elInput.value);
+        if (userSum>0){
+            elUSD.textContent = (userSum / 10630.75).toFixed(2) +' USD';
+        }
+        if (userSum>0){
+            elEURO.textContent = (userSum / 12595.14).toFixed(2)+ ' EURO';
+        }
+        if (userSum>0){
+            elRUB.textContent = (userSum / 142.50).toFixed(2)+' RUB';
+        }
+        
+    })
+    
